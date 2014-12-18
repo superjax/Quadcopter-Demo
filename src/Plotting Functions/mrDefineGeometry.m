@@ -2,6 +2,8 @@
 if isfield(P,'x_quad') && isfield(P,'y_quad') && isfield(P,'z_quad') && isfield(P,'c_quad')
     % do nothing
 else
+    % quadcopter_lean.stl has the propellers removed,
+    % quadcopter_full.stl does not have the propellers removed
     [P.x_quad, P.y_quad, P.z_quad, P.c_quad] = stlread2('quadcopter_lean.stl');
     [m,n] = size(P.c_quad);
     P.c_quad_blue = P.c_quad;

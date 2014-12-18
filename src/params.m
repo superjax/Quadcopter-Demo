@@ -1,11 +1,10 @@
 format compact
 warning('off')
-addpath(genpath(pwd))
+addpath(genpath(pwd))  % allows for files in subdirectories to be accessible by MATLAB
 run mrParams
 run mrDefineGeometry
 run computeGains
 run sensorParams
-%run get_moments
 
 
 % Guidance Model Gains

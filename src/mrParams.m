@@ -1,19 +1,14 @@
 
 P.Ts = 0.01;
 
-% physical parameters of airframe
+% physical parameters of airframe - determined in Quadcopter.xlsx
 P.gravity = 9.81;
 P.mass    = .321;
 P.Jxx     = .002784;
 P.Jyy     = .002784;
 P.Jzz     = .004659;
 
-% % Params from paper
-% P.mass    = 0.468;
-% P.Jxx     = 4.856e-3;
-% P.Jyy     = 4.856e-3;
-% P.Jzz     = 8.801e-3;
-
+% /todo: figure out what these do
 P.L  = 0.25;
 P.k1 = 1; %2.98*10e-6;
 P.k2 = 1; %2.98*10e-6;
