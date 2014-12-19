@@ -10,9 +10,14 @@ else
     P.c_quad_green = P.c_quad;
     P.c_quad_red = P.c_quad;
     P.scale = .05;
-    P.x_quad = P.x_quad*P.scale;
-    P.y_quad = P.y_quad*P.scale;
-    P.z_quad = P.z_quad*P.scale;
+    P.x_offset = .57;
+    P.y_offset = .16;
+    P.z_offset = .18;
+    P.x_quad = P.x_quad*P.scale+ones(size(P.x_quad))*P.x_offset;
+    P.y_quad = P.y_quad*P.scale+ones(size(P.y_quad))*P.y_offset;
+    P.z_quad = P.z_quad*P.scale+ones(size(P.z_quad))*P.y_offset;
+    
+    
 
     for i = 1:n
         P.c_quad_blue(:,i) = [1;1;1]; %not sure what these are doing

@@ -6,12 +6,8 @@ run mrDefineGeometry
 run computeGains
 run sensorParams
 
+P.phi0 = .25;
+P.theta0 = -.5;
+P.psi0 = pi()/4;
 
-% Guidance Model Gains
-P.b_phidot = 1;
-P.b_phi = 1.3;
-P.b_hdot = 1;
-P.b_h = .7;
-P.b_Va = 2;
-P.b_chidot = 1;
-P.b_chi = 1;
+P.lambda = 1000;

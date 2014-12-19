@@ -26,6 +26,7 @@ function mrDrawAircraft(uu,P)
     z_c      = uu(21+n); % z command
     yaw_c    = uu(22+n); % yaw command
     t        = uu(23+n); % time
+    show_destination = uu(24+n); %show destination flag
 
     % define persistent variables 
     persistent spacecraft1_handle;
@@ -42,7 +43,7 @@ function mrDrawAircraft(uu,P)
         hold on;
         spacecraft1_handle = drawSpacecraftBody(P.x_quad, P.y_quad, P.z_quad, P.c_quad_red,...
                                                pn1,pe1,pd1,phi,theta,psi,...
-                                               [],'normal');
+                                               []);
 %         spacecraft2_handle = drawSpacecraftBody(P.x_quad, P.y_quad, P.z_quad, P.c_quad_blue,...
 %                                                pn2,pe2,pd2,phi,theta,psi,...
 %                                                [],'normal');
@@ -93,8 +94,10 @@ function mrDrawAircraft(uu,P)
 %         drawSpacecraftBody(P.x_quad, P.y_quad, P.z_quad, P.c_quad_blue,...
 %                            pn3,pe3,pd3,phi,theta,psi,...
 %                            spacecraft3_handle);
-        drawCommandedPosition(x_c,y_c,z_c,yaw_c,...
-                           commanded_position_handle);
+        if show_destination
+            drawCommandedPosition(x_c,y_c,z_c,yaw_c,...
+                               commanded_position_handle);
+        end
     end
 end
 
@@ -106,7 +109,7 @@ end
 %
 function handle = drawSpacecraftBody(X,Y,Z,C,...
                                      pn,pe,pd,phi,theta,psi,...
-                                     handle,mode)
+                                     handle)
   length = size(X(1,:));
   X = [X(1,:),X(2,:),X(3,:)];
   Y = [Y(1,:),Y(2,:),Y(3,:)];

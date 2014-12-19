@@ -71,6 +71,7 @@ function sys=mdlDerivatives(t,x,uu,P)
     tt = tan(theta);
     cs = cos(psi);
     ss = sin(psi);
+  
     
      % translational kinematics model
     tkm = [ct*cs sp*st*cs-cp*ss cp*st*cs+sp*ss;
